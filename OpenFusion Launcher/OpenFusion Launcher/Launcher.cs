@@ -27,7 +27,7 @@ namespace OpenFusion_Launcher
             webBrowser = new ChromiumWebBrowser();
             panel1.Controls.Add(webBrowser);
             webBrowser.Dock = DockStyle.Fill;
-            webBrowser.Load("https://discord.gg/DYavckB");
+            webBrowser.Load(Global.COMMUNITY_LINK);
 
         }
 
@@ -59,8 +59,8 @@ namespace OpenFusion_Launcher
 
             if (File.Exists(Global.LAUNCHER_SETTING.GameExecutablePath))
             {
-                Global.GAME_SETTING.MakeLink();
-                Process.Start(Global.LAUNCHER_SETTING.GameExecutablePath);
+                if(Global.GAME_SETTING.MakeLink()) Process.Start(Global.LAUNCHER_SETTING.GameExecutablePath);
+                else MessageBox.Show("Failed to link the game files! Make sure you've set your game files folder.", "Linking failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else MessageBox.Show("Client file not found.", "No client file found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }

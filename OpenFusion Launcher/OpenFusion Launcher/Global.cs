@@ -7,6 +7,11 @@ namespace OpenFusion_Launcher.Definition
     public static class Global
     {
         /// <summary>
+        /// The community link for the web browser to show at startup.
+        /// </summary>
+        public const string COMMUNITY_LINK = "https://discord.gg/DYavckB";
+
+        /// <summary>
         /// The name of the Fusionfall folder. Duhh??
         /// </summary>
         public const string FF_CACHE_FOLDER_NAME = "Fusionfall";
