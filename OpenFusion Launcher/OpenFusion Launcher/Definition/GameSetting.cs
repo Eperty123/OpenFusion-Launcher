@@ -87,7 +87,7 @@ namespace OpenFusion_Launcher.Definition
             catch (Exception)
             {
                 // Revert the backup folder.
-                if (Directory.Exists(ffCachePathBak)) Directory.Move(ffCachePathBak, ffCachePath);
+                if (Directory.Exists(ffCachePathBak) && !Directory.Exists(ffCachePath)) Directory.Move(ffCachePathBak, ffCachePath);
                 result = false;
             }
 
