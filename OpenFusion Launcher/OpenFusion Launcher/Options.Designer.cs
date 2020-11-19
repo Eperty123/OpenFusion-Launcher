@@ -38,7 +38,12 @@ namespace OpenFusion_Launcher
             this.gameVersionComboBox = new System.Windows.Forms.ComboBox();
             this.saveBtn = new System.Windows.Forms.Button();
             this.loadBtn = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.clientPathBrowseBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.clientPathTxtBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -78,9 +83,9 @@ namespace OpenFusion_Launcher
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Game Folder";
+            this.label2.Text = "Game Files Folder";
             // 
             // label1
             // 
@@ -102,7 +107,7 @@ namespace OpenFusion_Launcher
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(291, 137);
+            this.saveBtn.Location = new System.Drawing.Point(291, 242);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 1;
@@ -112,7 +117,7 @@ namespace OpenFusion_Launcher
             // 
             // loadBtn
             // 
-            this.loadBtn.Location = new System.Drawing.Point(210, 137);
+            this.loadBtn.Location = new System.Drawing.Point(210, 242);
             this.loadBtn.Name = "loadBtn";
             this.loadBtn.Size = new System.Drawing.Size(75, 23);
             this.loadBtn.TabIndex = 2;
@@ -120,11 +125,51 @@ namespace OpenFusion_Launcher
             this.loadBtn.UseVisualStyleBackColor = true;
             this.loadBtn.Click += new System.EventHandler(this.loadBtn_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.clientPathBrowseBtn);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.clientPathTxtBox);
+            this.groupBox2.Location = new System.Drawing.Point(12, 137);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(354, 99);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Launcher Configuration";
+            // 
+            // clientPathBrowseBtn
+            // 
+            this.clientPathBrowseBtn.Location = new System.Drawing.Point(313, 30);
+            this.clientPathBrowseBtn.Name = "clientPathBrowseBtn";
+            this.clientPathBrowseBtn.Size = new System.Drawing.Size(32, 23);
+            this.clientPathBrowseBtn.TabIndex = 6;
+            this.clientPathBrowseBtn.Text = "...";
+            this.clientPathBrowseBtn.UseVisualStyleBackColor = true;
+            this.clientPathBrowseBtn.Click += new System.EventHandler(this.clientPathBrowseBtn_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Client Folder";
+            // 
+            // clientPathTxtBox
+            // 
+            this.clientPathTxtBox.Location = new System.Drawing.Point(6, 32);
+            this.clientPathTxtBox.Name = "clientPathTxtBox";
+            this.clientPathTxtBox.ReadOnly = true;
+            this.clientPathTxtBox.Size = new System.Drawing.Size(301, 20);
+            this.clientPathTxtBox.TabIndex = 5;
+            // 
             // Options
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 172);
+            this.ClientSize = new System.Drawing.Size(378, 278);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.loadBtn);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.groupBox1);
@@ -136,6 +181,8 @@ namespace OpenFusion_Launcher
             this.Text = "Options";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -150,5 +197,9 @@ namespace OpenFusion_Launcher
         private System.Windows.Forms.TextBox gameFolderTxtBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button loadBtn;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button clientPathBrowseBtn;
+        private System.Windows.Forms.TextBox clientPathTxtBox;
     }
 }

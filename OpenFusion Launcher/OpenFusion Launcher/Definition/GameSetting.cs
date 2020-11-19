@@ -57,6 +57,7 @@ namespace OpenFusion_Launcher.Definition
         /// <summary>
         /// Make the link to the appropriate folder for the <see cref="GameFilesPath"/>.
         /// </summary>
+        /// <returns>Return true if it made the link otherwise false.</returns>
         public bool MakeLink()
         {
             bool result = false;
@@ -91,6 +92,30 @@ namespace OpenFusion_Launcher.Definition
                 result = false;
             }
 
+            return result;
+        }
+
+        /// <summary>
+        /// Make the assetInfo.php page with the specified version in <see cref="Version"/>.
+        /// </summary>
+        /// <returns>Return true if it made the file otherwise false.</returns>
+        public bool MakeAssetLink()
+        {
+            bool result = false;
+            try
+            {
+                var filesPath = Path.Combine(Global.LAUNCHER_SETTING.GamePath, "resources/app/files");
+                var assetInfoPath = Path.Combine(filesPath, "assetInfo.php");
+                if (Directory.Exists(filesPath))
+                {
+                    File.WriteAllText(assetInfoPath, $"{Global.GAME_CDN_LINK}/{Version}/");
+                    result = true;
+                }
+            }
+            catch (Exception)
+            {
+                result = false;
+            }
             return result;
         }
         #endregion

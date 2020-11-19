@@ -12,6 +12,11 @@ namespace OpenFusion_Launcher.Definition
         public const string COMMUNITY_LINK = "https://discord.gg/DYavckB";
 
         /// <summary>
+        /// The game files cdn for downloading required game files.
+        /// </summary>
+        public const string GAME_CDN_LINK = "http://ht.cdn.turner.com/ff/big";
+
+        /// <summary>
         /// The name of the Fusionfall folder. Duhh??
         /// </summary>
         public const string FF_CACHE_FOLDER_NAME = "Fusionfall";

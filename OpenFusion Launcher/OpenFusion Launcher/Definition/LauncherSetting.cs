@@ -7,6 +7,7 @@ namespace OpenFusion_Launcher.Definition
     {
         #region Public Variables
         public string LastUsedGameSettingPath { get; set; }
+        public string GamePath { get; set; }
         public string GameExecutablePath { get; set; }
         #endregion
 
@@ -70,6 +71,7 @@ namespace OpenFusion_Launcher.Definition
             {
                 var loaded = Deserialize();
                 LastUsedGameSettingPath = loaded.LastUsedGameSettingPath;
+                GamePath = loaded.GamePath;
                 GameExecutablePath = loaded.GameExecutablePath;
                 Global.GAME_SETTING.LoadFile(LastUsedGameSettingPath);
             }
