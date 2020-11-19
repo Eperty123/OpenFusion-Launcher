@@ -3,3 +3,6 @@
 
 ## Features
 * Easily manage your game files, thus allowing you to quickly switch between game builds.
+
+## Requirements
+* .NET 4.7.2
