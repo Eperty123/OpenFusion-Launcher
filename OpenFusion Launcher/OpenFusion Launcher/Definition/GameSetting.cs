@@ -60,14 +60,14 @@ namespace OpenFusion_Launcher.Definition
         public bool MakeLink()
         {
             bool result = false;
+            var ffCachePath = Path.Combine(Global.UNITY_CACHE_PATH, Global.FF_CACHE_FOLDER_NAME);
+            var ffCachePathBak = Path.Combine(Global.UNITY_CACHE_PATH, "_" + Global.FF_CACHE_FOLDER_NAME);
+            var unityPath = Global.UNITY_CACHE_PATH;
 
             try
             {
                 if (!string.IsNullOrEmpty(GameFilesPath))
                 {
-                    var ffCachePath = Path.Combine(Global.UNITY_CACHE_PATH, Global.FF_CACHE_FOLDER_NAME);
-                    var ffCachePathBak = Path.Combine(Global.UNITY_CACHE_PATH, "_" + Global.FF_CACHE_FOLDER_NAME);
-                    var unityPath = Global.UNITY_CACHE_PATH;
 
                     // Create the Unity folder if not existing.
                     if (!Directory.Exists(unityPath)) Directory.CreateDirectory(unityPath);
@@ -86,6 +86,8 @@ namespace OpenFusion_Launcher.Definition
             }
             catch (Exception)
             {
+                // Revert the backup folder.
+                if (Directory.Exists(ffCachePathBak)) Directory.Move(ffCachePathBak, ffCachePath);
                 result = false;
             }
 
