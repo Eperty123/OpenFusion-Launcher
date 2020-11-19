@@ -59,8 +59,8 @@ namespace OpenFusion_Launcher
 
             if (File.Exists(Global.LAUNCHER_SETTING.GameExecutablePath))
             {
-                if(Global.GAME_SETTING.MakeLink()) Process.Start(Global.LAUNCHER_SETTING.GameExecutablePath);
-                else MessageBox.Show("Failed to link the game files! Make sure you've set your game files folder.", "Linking failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(!Global.GAME_SETTING.MakeLink()) MessageBox.Show("Failed to link the game files! Make sure you've set your game files folder. Default game version or existing will be used.", "Linking failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Process.Start(Global.LAUNCHER_SETTING.GameExecutablePath);
             }
             else MessageBox.Show("Client file not found.", "No client file found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
