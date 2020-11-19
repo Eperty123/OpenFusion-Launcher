@@ -1,6 +1,7 @@
 ﻿using CreateMaps;
 using System;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace OpenFusion_Launcher.Definition
@@ -106,6 +107,26 @@ namespace OpenFusion_Launcher.Definition
             {
                 var filesPath = Path.Combine(Global.LAUNCHER_SETTING.GamePath, "resources/app/files");
                 var assetInfoPath = Path.Combine(filesPath, "assetInfo.php");
+                var indexPath = Path.Combine(filesPath, "index.html");
+                var indexPage = new HtmlAgilityPack.HtmlDocument();
+
+                // Load the index page if it exists and modify the unity embed src value.
+                if (File.Exists(indexPath))
+                {
+                    // Load the index page.
+                    indexPage.Load(indexPath);
+
+                    /* References:
+                     * https://stackoverflow.com/questions/52890557/htmlagilitypack-get-element-in-class-by-class
+                     * https://html-agility-pack.net/from-file
+                     * https://html-agility-pack.net/knowledge-base/39274255/how-to-get-src-tag-from-image-
+                     */
+                    var embed_node = indexPage.DocumentNode.SelectSingleNode("//embed[@id='Unity_embed']");
+                    embed_node.SetAttributeValue("src", $"{Global.GAME_CDN_LINK}/{Version}/main.unity3d");
+                    indexPage.Save(indexPath);
+                }
+
+                // If the files path exists write the modified assetInfo.php.
                 if (Directory.Exists(filesPath))
                 {
                     File.WriteAllText(assetInfoPath, $"{Global.GAME_CDN_LINK}/{Version}/");
