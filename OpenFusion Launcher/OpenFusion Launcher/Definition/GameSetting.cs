@@ -73,7 +73,7 @@ namespace OpenFusion_Launcher.Definition
                     if (!Directory.Exists(unityPath)) Directory.CreateDirectory(unityPath);
 
                     // If the Fusionfall folder exists, rename it so we can create the link without problems.
-                    if (Directory.Exists(ffCachePath) && !Directory.Exists(ffCachePathBak)) Directory.Move(ffCachePath, ffCachePathBak);
+                    if (!JunctionPoint.Exists(ffCachePath) && Directory.Exists(ffCachePath) && !Directory.Exists(ffCachePathBak)) Directory.Move(ffCachePath, ffCachePathBak);
 
                     // Delete any prior traces of any links.
                     if (JunctionPoint.Exists(ffCachePath)) JunctionPoint.Delete(ffCachePath);
