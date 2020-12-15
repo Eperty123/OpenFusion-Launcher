@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Threading;
 
 namespace OpenFusion_Launcher.Definition
 {
@@ -17,7 +19,7 @@ namespace OpenFusion_Launcher.Definition
         public const string GAME_CDN_LINK = "http://ht.cdn.turner.com/ff/big";
 
         /// <summary>
-        /// The name of the Fusionfall folder. Duhh??
+        /// The name of the Fusionfall folder located in the AppData/LocalLow/Unity/Web Player/Cache. Duhh??
         /// </summary>
         public const string FF_CACHE_FOLDER_NAME = "Fusionfall";
 
@@ -698,6 +700,16 @@ namespace OpenFusion_Launcher.Definition
         /// The game setting class.
         /// </summary>
         public static GameSetting GAME_SETTING = new GameSetting();
+
+        /// <summary>
+        /// The game process.
+        /// </summary>
+        public static Process GAME_PROCESS;
+
+        /// <summary>
+        /// The thread for watching the game process.
+        /// </summary>
+        public static Thread GAME_WATCHER_THREAD;
 
         // Forms
 

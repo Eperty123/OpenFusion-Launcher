@@ -41,7 +41,7 @@ namespace OpenFusion_Launcher
             this.optionsBtn.Location = new System.Drawing.Point(652, 415);
             this.optionsBtn.Name = "optionsBtn";
             this.optionsBtn.Size = new System.Drawing.Size(136, 23);
-            this.optionsBtn.TabIndex = 1;
+            this.optionsBtn.TabIndex = 3;
             this.optionsBtn.Text = "Options";
             this.optionsBtn.UseVisualStyleBackColor = true;
             this.optionsBtn.Click += new System.EventHandler(this.optionsBtn_Click);
@@ -65,7 +65,7 @@ namespace OpenFusion_Launcher
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 397);
-            this.panel1.TabIndex = 3;
+            this.panel1.TabIndex = 1;
             // 
             // Launcher
             // 

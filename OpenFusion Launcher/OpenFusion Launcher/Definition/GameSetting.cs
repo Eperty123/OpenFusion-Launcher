@@ -1,7 +1,6 @@
 ﻿using CreateMaps;
 using System;
 using System.IO;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace OpenFusion_Launcher.Definition

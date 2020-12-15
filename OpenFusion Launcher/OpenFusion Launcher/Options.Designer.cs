@@ -42,6 +42,7 @@ namespace OpenFusion_Launcher
             this.clientPathBrowseBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.clientPathTxtBox = new System.Windows.Forms.TextBox();
+            this.closeBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -107,7 +108,7 @@ namespace OpenFusion_Launcher
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(291, 242);
+            this.saveBtn.Location = new System.Drawing.Point(210, 243);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 1;
@@ -117,7 +118,7 @@ namespace OpenFusion_Launcher
             // 
             // loadBtn
             // 
-            this.loadBtn.Location = new System.Drawing.Point(210, 242);
+            this.loadBtn.Location = new System.Drawing.Point(129, 243);
             this.loadBtn.Name = "loadBtn";
             this.loadBtn.Size = new System.Drawing.Size(75, 23);
             this.loadBtn.TabIndex = 2;
@@ -164,11 +165,22 @@ namespace OpenFusion_Launcher
             this.clientPathTxtBox.Size = new System.Drawing.Size(301, 20);
             this.clientPathTxtBox.TabIndex = 5;
             // 
+            // closeBtn
+            // 
+            this.closeBtn.Location = new System.Drawing.Point(291, 243);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(75, 23);
+            this.closeBtn.TabIndex = 4;
+            this.closeBtn.Text = "Close";
+            this.closeBtn.UseVisualStyleBackColor = true;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
             // Options
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(378, 278);
+            this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.loadBtn);
             this.Controls.Add(this.saveBtn);
@@ -201,5 +213,6 @@ namespace OpenFusion_Launcher
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button clientPathBrowseBtn;
         private System.Windows.Forms.TextBox clientPathTxtBox;
+        private System.Windows.Forms.Button closeBtn;
     }
 }

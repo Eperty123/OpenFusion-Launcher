@@ -78,5 +78,10 @@ namespace OpenFusion_Launcher
                 clientPathTxtBox.Text = fbd.FileName;
             }
         }
+
+        private void closeBtn_Click(object sender, System.EventArgs e)
+        {
+            Close();
+        }
     }
 }
